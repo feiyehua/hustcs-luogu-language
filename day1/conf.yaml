@@ -3,9 +3,9 @@ folder: day
 name: day1
 start time: 2022-10-01 08:00:00+0800
 subdir:
-- a
-- b
-- c
+- hasmeal
+- swim
+- finalscore
 - d
 - e
 - f
