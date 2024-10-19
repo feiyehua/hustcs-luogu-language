@@ -1,7 +1,6 @@
 *.log
 __pycache__
 *.zip
-release
 uoj
 noi
 pc2
