@@ -24,10 +24,6 @@
 
 {{ self.sample_text() }}
 
-{{ s('sample', 2) }}
-
-{{ self.sample_text() }}
-
 {{ s('subtasks') }}
 
 对于 $100\%$ 的测试数据，$1 \le n \le 10^{18}$，$1 \le f(1),f(2) < 998244353$，$0 \le a, b, c<998244343$。
