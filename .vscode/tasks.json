@@ -1,0 +1,56 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: clang++ build debug file",
+            "command": "clang++",
+            "args": [
+                "-Wall",
+                "-DTEST",
+                "-O0",
+                "--std=c++17",                
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/target/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$clang"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Build debug file with clang++."
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: clang++ build optimized file",
+            "command": "clang++",
+            "args": [
+                "-Wall",
+                "-Ofast",
+                "--std=c++17",                
+                "${file}",
+                "-o",
+                "${fileDirname}/target/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Build release file with clang++."
+        }
+    ],
+
+    "version": "2.0.0"
+}
