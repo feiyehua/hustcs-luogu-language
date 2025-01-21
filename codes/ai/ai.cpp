@@ -94,48 +94,40 @@ signed main()
     {
         fr(w[i]);
     }
+    for (int i = 1; i <= d; i++)
+    {
+        // if(w[i]==0) continue;
+        for (int l = 1; l <= n; l++)
+        {
+            a=k[i][l];
+            for (int j = 1; j <= d; j++)
+            {
+                t[i][j] += (a * v[l][j]); // 矩阵乘法
+            }
+        }
+    }
     for (int i = 1; i <= n; i++)
     {
         // if(w[i]==0) continue;
         for (int l = 1; l <= d; l++)
         {
-            a=q[i][l];
-            for (int j = 1; j <= n; j++)
+            b=(long long)q[i][l];
+            for (int j = 1; j <= d; j++)
             {
-                t[i][j] += (a * k[l][j]); // 矩阵乘法
+                r[i][j] += (b * (long long)t[l][j]);
             }
         }
     }
     for (int i = 1; i <= n; i++)
     {
-        // if(w[i]==0) continue;
-        for (int l = 1; l <= n; l++)
-        {
-            b=(long long)t[i][l];
-            for (int j = 1; j <= d; j++)
-            {
-                r[i][j] += (b * v[l][j]);
-            }
-        }
         for (int j = 1; j <= d; j++)
         {
             r[i][j] *= w[i];
-            // fw(r[i][j]);
-            printf("%lld",r[i][j]);
+            fw(r[i][j]);
             putchar_unlocked(' ');
         }
         putchar_unlocked('\n');
     }
-    // for (int i = 1; i <= n; i++)
-    // {
-    //     for (int j = 1; j <= d; j++)
-    //     {
-    //         r[i][j] *= w[i];
-    //         fw(r[i][j]);
-    //         putchar_unlocked(' ');
-    //     }
-    //     putchar_unlocked('\n');
-    // }
 #ifdef LOCAL
     auto end = chrono::high_resolution_clock::now();
     std::chrono::duration<double, std::milli> ms = end - start;
